@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoanForm.css";
 function LoanForm() {
-  // Define state variables to store form data and response data
+ 
   const [formData, setFormData] = useState({
     personalCode: "",
     loanAmount: "",
@@ -9,7 +9,7 @@ function LoanForm() {
   });
   const [responseData, setResponseData] = useState(null);
 
-  // Handler function to update form data state variables
+  // Handler function
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -18,7 +18,7 @@ function LoanForm() {
     }));
   };
 
-  // Handler function to send form data to backend and receive response
+  // Handler function
   const handleFormSubmit = (event) => {
     event.preventDefault();
     fetch(
@@ -36,7 +36,6 @@ function LoanForm() {
 
   return (
     <div>
-      {/* Display the response data */}
       {responseData && (
         <div>
           <p>Decision: {responseData.decision}</p>
@@ -49,7 +48,6 @@ function LoanForm() {
           )}
         </div>
       )}
-      {/* Render the loan form */}
       <form onSubmit={handleFormSubmit}>
         <div>
           <label>
