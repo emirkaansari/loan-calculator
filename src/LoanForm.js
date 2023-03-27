@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./LoanForm.css";
 function LoanForm() {
   // Define state variables to store form data and response data
   const [formData, setFormData] = useState({
